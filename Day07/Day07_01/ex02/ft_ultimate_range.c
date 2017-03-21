@@ -6,11 +6,12 @@
 /*   By: maechard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/18 21:57:08 by maechard          #+#    #+#             */
-/*   Updated: 2017/03/18 22:35:58 by maechard         ###   ########.fr       */
+/*   Updated: 2017/03/21 20:54:22 by maechard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <unistd.h>
 
 int		ft_ultimate_range(int **range, int min, int max)
 {
@@ -21,7 +22,10 @@ int		ft_ultimate_range(int **range, int min, int max)
 	dif = max - min;
 	range = malloc(dif * sizeof(*range));
 	if (range == NULL || min >= max)
-		return ('NULL');
+	{
+		*range = NULL;
+		return (0);
+	}
 	while (min != max)
 	{
 		range[address] = &min;
