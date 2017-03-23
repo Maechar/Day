@@ -6,7 +6,7 @@
 /*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/20 19:25:02 by maechard          #+#    #+#             */
-/*   Updated: 2017/03/22 16:23:59 by maechard         ###   ########.fr       */
+/*   Updated: 2017/03/23 17:45:46 by maechard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_cp(char *src, char *dest, int length)
 {
 	int		a;
 
-	a = 0;
+	a = -1;
 	while (++a < length)
 		dest[a] = src[a];
 	dest[a] = '\0';
@@ -61,23 +61,20 @@ char	**ft_split_whitespaces(char *str)
 	int		b;
 	int		c;
 
-	a = 0;
-	b = 0;
-	c = 0;
-	mots = ft_nb_lettres(str);
+	mots = ft_nb_mots(str);
 	if (!(tab = (char **)malloc(sizeof(char *) * mots + 1)))
 		return (NULL);
 	a = 0;
 	c = -1;
 	while (++c < mots)
 	{
-		while (str[a] == ' ' || str[a] == '\t' ||str[a] == '\n')
+		while (str[a] == ' ' || str[a] == '\t' || str[a] == '\n')
 			a++;
 		b = ft_nb_lettres(str + a);
-		if(!(tab[c] = (char*)malloc(sizeof(*tab) * (b + 1))))
+		if (!(tab[c] = (char*)malloc(sizeof(*tab) * (b + 1))))
 			return (NULL);
 		ft_cp(str + a, tab[c], b);
-			a = a + b;
+		a = a + b;
 	}
 	tab[c] = 0;
 	return (tab);

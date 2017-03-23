@@ -1,17 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.h                                           :+:      :+:    :+:   */
+/*   ft_stock_par.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/22 19:03:12 by maechard          #+#    #+#             */
-/*   Updated: 2017/03/23 15:50:23 by maechard         ###   ########.fr       */
+/*   Created: 2017/03/23 18:45:21 by maechard          #+#    #+#             */
+/*   Updated: 2017/03/23 19:42:46 by maechard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ABS_H
-# define FT_ABS_H
-# define ABS(value) (value < 0) ? (-value) : (value);
+#ifndef FT_STOCK_PAR_H
+# define FT_STOCK_PAR_H
 
+struct s_stock_par		*ft_param_to_tab(int ac, char **av);
+void					ft_show_tab(struct s_stock_par *par);
+char					**ft_split_whitespaces(char *str);
+void					ft_putchar(char c);
+
+typedef struct			s_stock_par
+{
+	int		size_param;
+	char	*str;
+	char	*copy;
+	char	**tab;
+}						t_stock_par;
 #endif
