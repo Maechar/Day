@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   foreach.c                                          :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 17:27:37 by maechard          #+#    #+#             */
-/*   Updated: 2017/03/27 10:43:31 by maechard         ###   ########.fr       */
+/*   Created: 2017/03/27 11:11:15 by maechard          #+#    #+#             */
+/*   Updated: 2017/03/27 11:16:04 by maechard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void (*f)(int))
+#include <stdlib.h>
+
+int		ft_any(char **tab, int (*f)(char*))
 {
 	int		address;
 
 	address = 0;
-	while (address != length)
+	while (tab[address] != 0)
 	{
-		f(tab[address]);
+		if (f(tab[address]) == 1)
+			return (1);
 		address++;
 	}
+	return (0);
 }

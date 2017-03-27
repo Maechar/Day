@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   foreach.c                                          :+:      :+:    :+:   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 17:27:37 by maechard          #+#    #+#             */
-/*   Updated: 2017/03/27 10:43:31 by maechard         ###   ########.fr       */
+/*   Created: 2017/03/27 10:29:50 by maechard          #+#    #+#             */
+/*   Updated: 2017/03/27 10:43:16 by maechard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void (*f)(int))
+#include <stdlib.h>
+
+int		*ft_map(int *tab, int length, int (*f)(int))
 {
 	int		address;
+	int		*resultat;
 
 	address = 0;
-	while (address != length)
+	if (!(r = (int*)malloc(sizeof(int) * length)))
+		return (NULL);
+	while (address < length)
 	{
-		f(tab[address]);
+		resultat[address] = f(tab[address]);
 		address++;
 	}
+	return (resultat);
 }
