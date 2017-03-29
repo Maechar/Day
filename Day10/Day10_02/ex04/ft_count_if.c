@@ -6,13 +6,9 @@
 /*   By: maechard <maechard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/27 11:17:25 by maechard          #+#    #+#             */
-/*   Updated: 2017/03/27 19:23:09 by maechard         ###   ########.fr       */
+/*   Updated: 2017/03/28 17:07:51 by maechard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-
-int		ft_str_is_alpha(char *str);
 
 int		ft_count_if(char **tab, int (*f)(char*))
 {
