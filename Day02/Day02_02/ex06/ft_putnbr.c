@@ -13,20 +13,9 @@
 #include <stdio.h>
 
 int		ft_putchar(char c);
+void		ft_putstr(char *str);
 
-void	ft_putstr(char *str)
-{
-	int		address;
-
-	address = 0;
-	while (str[address] != '\0')
-	{
-		ft_putchar(str[address]);
-		address++;
-	}
-}
-
-void	ft_putnbr(int nb)
+void		ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
 	{
